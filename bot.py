@@ -86,5 +86,5 @@ async def on_message(message):
     else:
         await message.channel.send("Something is wrong.")
 
-client.run("your token here")
+client.run("your_token_here")
 
