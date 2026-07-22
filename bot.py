@@ -79,12 +79,12 @@ async def on_message(message):
         except Exception:
             await message.channel.send("Format has to be NdN! Example: /roll 2d6")
             
-    elif message.content.startswith('$help'):
-        await message.channel.send("What do you want")
+    elif message.content.startswith('/help'):
+        await message.channel.send("commands:\n-----------------------------------\n/coinflip heads or /coinflip tails\n-----------------------------------\n/add adds two numbers\n*example:* /add 5 7\n-----------------------------------\n/roll then the number of dice and the number of sides on the dice\n*example:* /roll 2d6\n-----------------------------------\n/bye to say goodbye to the bot\n-----------------------------------\n/help to see this message again\n-----------------------------------")
     elif message.content.startswith('$bye'):
         await message.channel.send("bub-bye!")
     else:
         await message.channel.send("Something is wrong.")
 
-client.run("your_token_here")
+client.run("YOUR_DISCORD_BOTS_TOKEN_HERE")
 
