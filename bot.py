@@ -81,10 +81,24 @@ async def on_message(message):
             
     elif message.content.startswith('/help'):
         await message.channel.send("commands:\n-----------------------------------\n/coinflip heads or /coinflip tails\n-----------------------------------\n/add adds two numbers\n*example:* /add 5 7\n-----------------------------------\n/roll then the number of dice and the number of sides on the dice\n*example:* /roll 2d6\n-----------------------------------\n/bye to say goodbye to the bot\n-----------------------------------\n/help to see this message again\n-----------------------------------")
-    elif message.content.startswith('$bye'):
+        
+    elif message.content.startswith('/bye'):
         await message.channel.send("bub-bye!")
+        
+    elif message.content.startswith('/meme'):
+        meme_path = random.choice(['images/mem1.jpeg', 'images/mem2.jpeg', 'images/mem3.jpg', 'images/mem4.jpg', 'images/mem5.jpg'])
+        with open(meme_path, 'rb') as f:
+            picture = discord.File(f)
+        await message.channel.send(file=picture)
+        
+    elif message.content.startswith("/animalmeme"):
+        animal_path = random.choice(['animals/animal1.jpg', 'animals/animal2.jpg', 'animals/animal3.jpg', 'animals/animal4.jpg', 'animals/animal5.jpg', 'animals/animal6.jpg', 'animals/animal7.jpg'])
+        with open(animal_path, 'rb') as f:
+            picture = discord.File(f)
+        await message.channel.send(file=picture)
+        
     else:
-        await message.channel.send("Something is wrong.")
+        await message.channel.send("didn't understand that command.")
 
-client.run("YOUR_DISCORD_BOTS_TOKEN_HERE")
+client.run("YOUR_BOT_TOKEN_HERE")
 
